@@ -7,21 +7,17 @@ export default function Header() {
   const navigate = useNavigate()
   const location = useLocation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isInHero, setIsInHero] = useState(true)
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Check if we're still in hero section (assuming hero is viewport height)
     const heroHeight = window.innerHeight
     const isStillInHero = latest < heroHeight - 100
     
     setIsInHero(isStillInHero)
-    setIsScrolled(latest > 50 && !isStillInHero)
   })
 
   useEffect(() => {
-    // Reset on route change
     setIsInHero(location.pathname === '/')
   }, [location.pathname])
 
@@ -65,7 +61,6 @@ export default function Header() {
         style={{ backdropFilter: showTransparent ? 'none' : 'blur(8px)' }}
       >
         <div className="container-rosenfeld h-24 flex items-center justify-between">
-          {/* Logo */}
           <a 
             href="/"
             onClick={(e) => handleNavClick(e, '/')}
@@ -78,7 +73,6 @@ export default function Header() {
             />
           </a>
           
-          {/* Center: Navigation - Desktop Only */}
           <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
             <a 
               href="#about"
@@ -111,9 +105,7 @@ export default function Header() {
             </a>
           </nav>
           
-          {/* Right: Contact - Desktop / Hamburger - Mobile */}
           <div className="flex items-center gap-4">
-            {/* Contact Button - Desktop Only */}
             <a 
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
@@ -126,7 +118,6 @@ export default function Header() {
               <span>Contact</span>
             </a>
 
-            {/* Hamburger Menu - Mobile Only */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
               className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-colors"
@@ -141,7 +132,6 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </>
   )
