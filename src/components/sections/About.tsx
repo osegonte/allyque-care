@@ -42,7 +42,7 @@ export default function About() {
     <section id="about" className="py-24 lg:py-32 bg-gradient-to-b from-white to-muted/30">
       <div className="container-rosenfeld">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* LEFT: Clickable Satellite Map */}
+          {/* LEFT: Image */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -51,40 +51,13 @@ export default function About() {
             variants={fadeInLeft}
             className="w-full lg:w-2/5 flex-shrink-0"
           >
-            <a 
-              href="https://www.google.com/maps/search/?api=1&query=2021+E+9th+Street+Anderson+IN+46037"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block relative group"
-            >
-              <div className="h-[400px] rounded-2xl overflow-hidden shadow-medium group-hover:shadow-strong transition-all duration-300">
-                {/* Google Maps Satellite View Embed */}
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.1!2d-85.68012!3d40.10512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8814cd5e7e7e7e7e%3A0x1234567890abcdef!2s2021%20E%209th%20St%2C%20Anderson%2C%20IN%2046037!5e1!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                  width="100%"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                  title="Allyque Care Location - Satellite View"
-                />
-                
-                {/* Overlay with hover effect */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-6 py-3 rounded-lg shadow-medium">
-                    <div className="flex items-center gap-2 text-primary font-semibold">
-                      <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      <span>Get Directions</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
+            <div className="h-[500px] rounded-2xl overflow-hidden shadow-medium">
+              <img 
+                src="/images/about-section.jpg" 
+                alt="Allyque Care integrated care services"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </motion.div>
 
           {/* RIGHT: Content */}
@@ -119,8 +92,61 @@ export default function About() {
               and support individuals in developing life skills that foster confidence 
               and long-term independence.
             </p>
-            
-            {/* Single CTA */}
+
+            <p className="text-base text-muted-foreground leading-relaxed font-sans">
+              As a trusted partner to families, communities, and case management teams, 
+              we are committed to delivering services that honor individuality, strengthen 
+              connections, and enhance overall quality of life. At Allyque Care, everyone 
+              belongs, everyone is valued, and everyone is supported to reach their fullest 
+              potential.
+            </p>
+
+            {/* Our Commitment Section */}
+            <div className="pt-4 space-y-4">
+              <h3 className="text-2xl font-serif font-semibold text-primary">
+                Our Commitment
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed font-sans">
+                When you choose Allyque Care Integrated Services LLC, you are choosing 
+                a partner dedicated to uplifting individuals and empowering them to reach 
+                their fullest potential. We promise to maintain the highest level of care, 
+                demonstrate unwavering compassion, and continuously innovate to better 
+                serve our community.
+              </p>
+              <p className="text-base text-primary leading-relaxed font-sans italic">
+                Your loved one's journey matters to us. Their goals become our goals. 
+                Their success becomes our success.
+              </p>
+            </div>
+
+            {/* CQL Accreditation Badge */}
+            <div className="pt-6 border-t border-border/50">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <img 
+                    src="/logos/cql-logo.png" 
+                    alt="CQL Accreditation" 
+                    className="w-12 h-12 object-contain"
+                    onError={(e) => {
+                      // Fallback if logo not found
+                      e.currentTarget.style.display = 'none'
+                      const parent = e.currentTarget.parentElement
+                      if (parent) {
+                        parent.innerHTML = '<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>'
+                      }
+                    }}
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-primary">Accredited by</p>
+                  <p className="text-base font-semibold text-accent">
+                    CQL | The Council on Quality and Leadership
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
             <div className="pt-4">
               <a 
                 href="/careers" 

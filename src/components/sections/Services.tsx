@@ -9,42 +9,42 @@ const fadeInUp = {
 const services = [
   {
     title: 'Residential Habilitation',
-    description: 'Providing supportive living environments that promote independence and life skill development',
+    description: 'Providing supportive living environments that promote independence and life skill development.',
     icon: Home
   },
   {
     title: 'Community Transition',
-    description: 'Helping individuals successfully transition into community-based living settings',
+    description: 'Helping individuals successfully transition into community-based living settings.',
     icon: Users
   },
   {
     title: 'Wellness Coordination',
-    description: 'Comprehensive health and wellness support coordination',
+    description: 'Comprehensive health and wellness support coordination.',
     icon: Heart
   },
   {
     title: 'Transportation',
-    description: 'Safe and reliable transportation to appointments and community activities',
+    description: 'Safe and reliable transportation to appointments and community activities.',
     icon: Car
   },
   {
     title: 'Day Habilitation',
-    description: 'Structured daytime programs focused on skill building and community engagement',
+    description: 'Structured daytime programs focused on skill building and community engagement.',
     icon: Calendar
   },
   {
     title: 'Structured Family Caregiving',
-    description: 'Supporting families who provide care to their loved ones at home',
+    description: 'Supporting families who provide care to their loved ones at home.',
     icon: HeartHandshake
   },
   {
     title: 'Participant Assistance & Care (PAC)',
-    description: 'Individualized personal care and daily living support',
+    description: 'Individualized personal care and daily living support.',
     icon: Hand
   },
   {
     title: 'Respite Services',
-    description: 'Temporary relief care for primary caregivers',
+    description: 'Temporary relief care for primary caregivers.',
     icon: Clock
   }
 ]
