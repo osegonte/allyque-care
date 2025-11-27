@@ -41,16 +41,17 @@ export default function About() {
   return (
     <section id="about" className="py-24 lg:py-32 bg-gradient-to-b from-white to-muted/30">
       <div className="container-rosenfeld">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* LEFT: Image */}
+        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+          {/* LEFT: Image + CQL Badge */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             variants={fadeInLeft}
-            className="w-full lg:w-2/5 flex-shrink-0"
+            className="w-full lg:w-2/5 flex-shrink-0 space-y-4"
           >
+            {/* Main Image */}
             <div className="h-[500px] rounded-2xl overflow-hidden shadow-medium">
               <img 
                 src="/images/about-section.jpg" 
@@ -58,6 +59,42 @@ export default function About() {
                 className="w-full h-full object-cover"
               />
             </div>
+
+            {/* CQL Accreditation Badge - Rectangular, No Arrow */}
+            <a 
+              href="https://www.c-q-l.org/accreditation/systems-accreditation/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block group"
+              aria-label="CQL - Council on Quality and Leadership"
+            >
+              <div className="w-full bg-white border border-border/30 rounded-xl p-3 hover:border-accent/50 hover:shadow-soft transition-all">
+                <div className="flex items-center gap-3">
+                  {/* CQL Logo - Rectangular */}
+                  <div className="w-20 h-16 flex-shrink-0 flex items-center justify-center">
+                    <img 
+                      src="/logos/cql-logo.png" 
+                      alt="CQL – Council on Quality and Leadership"
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        const parent = e.currentTarget.parentElement
+                        if (parent) {
+                          parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-xs text-center text-muted-foreground font-semibold">CQL Logo</div>'
+                        }
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Text */}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-muted-foreground mb-0.5">Accredited by</p>
+                    <p className="text-sm font-semibold text-primary group-hover:text-accent transition-colors leading-tight">
+                      CQL | The Council on Quality and Leadership
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
           </motion.div>
 
           {/* RIGHT: Content */}
@@ -117,40 +154,6 @@ export default function About() {
                 Your loved one's journey matters to us. Their goals become our goals. 
                 Their success becomes our success.
               </p>
-            </div>
-
-            {/* CQL Accreditation - Compliant with Brand Guidelines */}
-            <div className="pt-6 border-t border-border/50">
-              <div className="flex items-start gap-4">
-                <div className="flex-1">
-                  <p className="text-base text-muted-foreground leading-relaxed font-sans mb-3">
-                    Allyque Care follows the practices and principles of CQL's framework 
-                    for person-centered excellence.
-                  </p>
-                </div>
-                <a 
-                  href="https://www.c-q-l.org/accreditation/systems-accreditation/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 group"
-                  aria-label="CQL - Council on Quality and Leadership"
-                >
-                  <div className="w-24 h-24 bg-white border border-border/30 rounded-lg p-3 hover:border-accent/50 hover:shadow-soft transition-all">
-                    <img 
-                      src="/logos/cql-logo.png" 
-                      alt="CQL – Council on Quality and Leadership"
-                      className="w-full h-full object-contain"
-                      onError={(e) => {
-                        // Fallback text if logo not found
-                        const parent = e.currentTarget.parentElement
-                        if (parent) {
-                          parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-xs text-center text-muted-foreground font-semibold">CQL Logo</div>'
-                        }
-                      }}
-                    />
-                  </div>
-                </a>
-              </div>
             </div>
 
             {/* CTA */}
