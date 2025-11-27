@@ -129,11 +129,12 @@ export default function Careers() {
               variants={fadeInUp}
               className="w-full lg:w-2/5 flex-shrink-0"
             >
-              <div className="h-[500px] rounded-2xl overflow-hidden shadow-medium">
+              <div className="h-[500px] rounded-2xl overflow-hidden shadow-medium bg-muted/30">
                 <img 
                   src="/images/careers-team.jpg" 
                   alt="Allyque Care team"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </motion.div>

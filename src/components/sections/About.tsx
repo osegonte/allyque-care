@@ -51,12 +51,13 @@ export default function About() {
             variants={fadeInLeft}
             className="w-full lg:w-2/5 flex-shrink-0 space-y-4"
           >
-            {/* Main Image */}
-            <div className="h-[500px] rounded-2xl overflow-hidden shadow-medium">
+            {/* Main Image - Lazy Loading */}
+            <div className="h-[500px] rounded-2xl overflow-hidden shadow-medium bg-muted/30">
               <img 
                 src="/images/about-section.jpg" 
                 alt="Allyque Care integrated care services"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
 
@@ -71,11 +72,12 @@ export default function About() {
               <div className="w-full bg-white border border-border/30 rounded-xl p-3 hover:border-accent/50 hover:shadow-soft transition-all">
                 <div className="flex items-center gap-3">
                   {/* CQL Logo - Rectangular */}
-                  <div className="w-20 h-16 flex-shrink-0 flex items-center justify-center">
+                  <div className="w-20 h-16 flex-shrink-0 flex items-center justify-center bg-muted/20">
                     <img 
                       src="/logos/cql-logo.png" 
                       alt="CQL – Council on Quality and Leadership"
                       className="w-full h-full object-contain"
+                      loading="lazy"
                       onError={(e) => {
                         const parent = e.currentTarget.parentElement
                         if (parent) {
