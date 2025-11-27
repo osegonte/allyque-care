@@ -41,6 +41,7 @@ export default function Header() {
       }
     } else {
       navigate(href)
+      window.scrollTo(0, 0)
     }
   }
 
@@ -60,7 +61,8 @@ export default function Header() {
         className="fixed top-0 left-0 right-0 z-50 border-b"
         style={{ backdropFilter: showTransparent ? 'none' : 'blur(8px)' }}
       >
-        <div className="container-rosenfeld h-24 flex items-center justify-between">
+        <div className="container-rosenfeld h-20 flex items-center justify-between">
+          {/* Logo - Medium size, centered vertically */}
           <a 
             href="/"
             onClick={(e) => handleNavClick(e, '/')}
@@ -69,10 +71,11 @@ export default function Header() {
             <img 
               src="/logo.svg" 
               alt="Allyque Care" 
-              className="h-24 w-auto"
+              className="h-16 w-auto"
             />
           </a>
           
+          {/* Center Navigation */}
           <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
             <a 
               href="#about"
@@ -105,6 +108,7 @@ export default function Header() {
             </a>
           </nav>
           
+          {/* Right Side - Contact + Mobile Menu */}
           <div className="flex items-center gap-4">
             <a 
               href="#contact"

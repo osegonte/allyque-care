@@ -119,30 +119,37 @@ export default function About() {
               </p>
             </div>
 
-            {/* CQL Accreditation Badge */}
+            {/* CQL Accreditation - Compliant with Brand Guidelines */}
             <div className="pt-6 border-t border-border/50">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <img 
-                    src="/logos/cql-logo.png" 
-                    alt="CQL Accreditation" 
-                    className="w-12 h-12 object-contain"
-                    onError={(e) => {
-                      // Fallback if logo not found
-                      e.currentTarget.style.display = 'none'
-                      const parent = e.currentTarget.parentElement
-                      if (parent) {
-                        parent.innerHTML = '<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>'
-                      }
-                    }}
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-primary">Accredited by</p>
-                  <p className="text-base font-semibold text-accent">
-                    CQL | The Council on Quality and Leadership
+              <div className="flex items-start gap-4">
+                <div className="flex-1">
+                  <p className="text-base text-muted-foreground leading-relaxed font-sans mb-3">
+                    Allyque Care follows the practices and principles of CQL's framework 
+                    for person-centered excellence.
                   </p>
                 </div>
+                <a 
+                  href="https://www.c-q-l.org/accreditation/systems-accreditation/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 group"
+                  aria-label="CQL - Council on Quality and Leadership"
+                >
+                  <div className="w-24 h-24 bg-white border border-border/30 rounded-lg p-3 hover:border-accent/50 hover:shadow-soft transition-all">
+                    <img 
+                      src="/logos/cql-logo.png" 
+                      alt="CQL – Council on Quality and Leadership"
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        // Fallback text if logo not found
+                        const parent = e.currentTarget.parentElement
+                        if (parent) {
+                          parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-xs text-center text-muted-foreground font-semibold">CQL Logo</div>'
+                        }
+                      }}
+                    />
+                  </div>
+                </a>
               </div>
             </div>
 
