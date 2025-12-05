@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import { Home, Users, Heart, Car, Calendar, HeartHandshake, Hand, Clock } from 'lucide-react'
 
 const fadeInUp = {
@@ -50,14 +51,52 @@ const services = [
 ]
 
 export default function Services() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   return (
-    <section id="services" className="py-24 lg:py-32 bg-white">
-      <div className="container-rosenfeld">
+    <section ref={ref} id="services" className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/images/services-background.jpg" 
+          alt="" 
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        
+        {/* Animated Overlay - Waits 2s, then fades IN */}
+        <motion.div 
+          className="absolute inset-0 bg-white/70"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isInView ? 1 : 0 }}
+          transition={{ 
+            duration: 1.2, 
+            ease: 'easeOut',
+            delay: 2.0  // 2 SECOND PAUSE before overlay appears
+          }}
+        />
+      </div>
+
+      {/* Content - Waits 2.3s, then fades IN */}
+      <motion.div 
+        className="container-rosenfeld relative z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ 
+          duration: 1, 
+          ease: 'easeOut', 
+          delay: 2.3  // Starts slightly after overlay
+        }}
+      >
         <motion.div
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ 
+            duration: 0.8, 
+            ease: 'easeOut', 
+            delay: 2.5  // Heading appears
+          }}
           variants={fadeInUp}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -76,13 +115,16 @@ export default function Services() {
               <motion.div
                 key={service.title}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ 
+                  duration: 0.6, 
+                  ease: 'easeOut', 
+                  delay: 2.7 + (index * 0.1)  // Cards start appearing
+                }}
                 variants={fadeInUp}
                 className="group"
               >
-                <div className="h-full p-8 bg-gradient-to-br from-muted/30 to-white border border-border/50 rounded-2xl hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                <div className="h-full p-8 bg-white/90 backdrop-blur-sm border border-border/50 rounded-2xl hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
                   <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                     <Icon className="w-8 h-8" />
                   </div>
@@ -99,7 +141,7 @@ export default function Services() {
             )
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

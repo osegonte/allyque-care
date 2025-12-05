@@ -171,34 +171,101 @@ export default function Careers() {
             className="max-w-4xl mx-auto"
           >
             <div className="bg-gradient-to-br from-muted/30 to-white border border-border/50 rounded-2xl p-8 shadow-soft">
-              {/* Google Form Placeholder */}
-              <div className="min-h-[600px] flex items-center justify-center bg-white rounded-xl border-2 border-dashed border-border">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-semibold text-primary mb-3">
-                    Employment Application Form
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    Google Form will be embedded here
-                  </p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>In the meantime, you can reach out to us directly:</p>
-                    <p className="font-semibold text-primary text-base">+1 (317) 642-3907</p>
-                    <p className="font-semibold text-accent text-base">info@allyquecare.com</p>
-                  </div>
-                </div>
+              {/* EMPLOYMENT FORM */}
+              <div className="w-full">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSfpzn26LOwyZjnbAyt9fT2NYx-7evP2Yf1bM5ytF95AQZ-6bQ/viewform?embedded=true" 
+                  width="100%" 
+                  height="1800" 
+                  frameBorder="0" 
+                  marginHeight="0" 
+                  marginWidth="0"
+                  className="w-full"
+                >
+                  Loading…
+                </iframe>
               </div>
 
-              {/* Instructions for adding form */}
-              <div className="mt-6 p-4 bg-accent/5 rounded-lg border border-accent/20">
-                <p className="text-sm text-muted-foreground">
-                  <strong className="text-primary">Note:</strong> To add your Google Form, 
-                  replace the placeholder above with an iframe embed of your employment application form.
+              {/* REQUIRED DOCUMENTS SECTION */}
+              <div className="mt-12 p-8 bg-white border border-border/50 rounded-2xl">
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-4 text-center">
+                  Required Documents
+                </h3>
+                <p className="text-muted-foreground text-center mb-8">
+                  Please prepare the following documents to complete your application
                 </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Valid Driver's License</span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Social Security Card</span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Resume/CV</span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Certifications (if applicable)</span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Professional References</span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-muted-foreground">Proof of Eligibility to Work</span>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <a 
+                    href="mailto:careers@allyquecare.com?subject=Employment Application Documents&body=Hello,%0D%0A%0D%0APlease find attached my application documents:%0D%0A%0D%0A☐ Driver's License%0D%0A☐ Social Security Card%0D%0A☐ Resume/CV%0D%0A☐ Certifications%0D%0A☐ References%0D%0A☐ Proof of Eligibility to Work%0D%0A%0D%0AName:%0D%0APhone:%0D%0AEmail:%0D%0A%0D%0AThank you!"
+                    className="inline-flex items-center gap-2 h-12 px-8 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg shadow-medium transition-all hover:shadow-strong"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Email Your Documents
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-4">
+                    Click the button above to open your email client and send all required documents to:<br />
+                    <span className="font-semibold text-accent">careers@allyquecare.com</span>
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -234,7 +301,7 @@ export default function Careers() {
                 Call Us
               </a>
               <a 
-                href="mailto:info@allyquecare.com"
+                href="mailto:careers@allyquecare.com"
                 className="inline-flex items-center justify-center gap-2 h-14 px-8 bg-white hover:bg-muted/50 text-primary font-semibold rounded-lg border-2 border-border hover:border-accent transition-all"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
